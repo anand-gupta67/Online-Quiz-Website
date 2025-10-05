@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Quiz Master</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Programming Quiz Master</h1>
+        
+        <div id="languageSelection" class="language-selection">
+            <button class="lang-btn" onclick="startQuiz('java')">☕ Java</button>
+            <button class="lang-btn" onclick="startQuiz('cpp')">⚡ C++</button>
+            <button class="lang-btn" onclick="startQuiz('python')">🐍 Python</button>
+            <button class="lang-btn" onclick="startQuiz('javascript')">💛 JavaScript</button>
+        </div>
+
+        <div id="quizSection" class="quiz-section">
+            <div class="quiz-header">
+                <div class="timer">⏱️ <span id="timeLeft">60</span>s</div>
+                <div class="progress">Question <span id="currentQ">1</span> / <span id="totalQ">20</span></div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-text" id="questionText"></div>
+                <div class="options" id="optionsContainer"></div>
+                <div class="feedback" id="feedback"></div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="backToLanguages()">Back</button>
+                <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Next Question</button>
+            </div>
+        </div>
+
+        <div id="resultsSection" class="results">
+            <h2>🎉 Quiz Complete!</h2>
+            <div class="score-display" id="finalScore">0%</div>
+            <div class="score-message" id="scoreMessage"></div>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="correctCount">0</div>
+                    <div class="stat-label">Correct</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="incorrectCount">0</div>
+                    <div class="stat-label">Incorrect</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="timeTaken">0s</div>
+                    <div class="stat-label">Time Taken</div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" onclick="restartQuiz()" style="width: 100%">Try Another Quiz</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
